@@ -1,0 +1,6 @@
+Make a project
+Refresh the folders
+Go in view ModelExplorer
+context menu import
+menu ImportPackageFromUserModel
+Select and add the uml file.

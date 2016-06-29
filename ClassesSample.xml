@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<sheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <class>
+       <name>Class1</name>
+       <id>1</id>
+       <base>2</base>
+    </class>
+    <class>
+       <name>Class2</name>
+       <id>2</id>
+    </class>
+    <class>
+       <name>Class3</name>
+       <id>3</id>
+    </class>
+</sheet>
