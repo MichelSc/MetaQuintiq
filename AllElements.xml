@@ -1,7 +1,4 @@
 <?xml version="1.0" ?>
-<!DOCTYPE doc [
-<!ENTITY all_classes SYSTEM "AllClasses.xml">
-]>
-<doc>
-    &all_classes;
+<doc xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:include href="C:\Users\MiSc\Desktop\MyFTV\Notes\Meta\AllClasses.xml"/>;
 </doc>

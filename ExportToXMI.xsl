@@ -7,9 +7,6 @@
 
 <xsl:template match="/">
 
-<xsl:text>
-</xsl:text>
-
 <uml:Model 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xmi="http://www.omg.org/spec/XMI/20131001" 
@@ -20,6 +17,9 @@
 
 <xsl:for-each select="doc/all_classes/class">
 
+<xsl:text>
+</xsl:text>
+
   <packagedElement xmi:type="uml:Class"> 
     <xsl:attribute name="xmi:id">
         <xsl:value-of select="id"/>
@@ -27,11 +27,12 @@
     <xsl:attribute name="name">
         <xsl:value-of select="name"/>
     </xsl:attribute>
-  </packagedElement> 
-  <xsl:text>
-  </xsl:text>
-  
+    </packagedElement> 
+
 </xsl:for-each>
+
+<xsl:text>
+</xsl:text>
 
 </uml:Model>
 
