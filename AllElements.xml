@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE doc [
+<!ENTITY all_classes SYSTEM "AllClasses.xml">
+]>
+<doc>
+    &all_classes;
+</doc>
