@@ -18,7 +18,7 @@
     xmi:id="_Jb-_wDlMEeaBUKK2wCs8Hg" 
     name="RootElement">
 
-<xsl:for-each select="sheet/class">
+<xsl:for-each select="doc/all_classes/class">
 
   <packagedElement xmi:type="uml:Class"> 
     <xsl:attribute name="xmi:id">
