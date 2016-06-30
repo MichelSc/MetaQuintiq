@@ -39,25 +39,36 @@
 <xsl:text>
 </xsl:text>
   <packagedElement xmi:type="uml:DataType" xmi:id="20008" name="QKey"/>
-<xsl:text>
-</xsl:text>
 
 <xsl:for-each select="doc/all_classes/class">
 
+<xsl:text>
+</xsl:text>
   <packagedElement xmi:type="uml:Class"> 
     <xsl:variable name="classid" select="id"/>
-
     <xsl:attribute name="xmi:id">
         <xsl:value-of select="$classid"/>
     </xsl:attribute>
     <xsl:attribute name="name">
         <xsl:value-of select="name"/>
     </xsl:attribute>
+    
+<xsl:text>
+  </xsl:text>
+    <generalization xmi:type="uml:Generalization">
+      <xsl:attribute name="xmi:id">
+          <xsl:value-of select="$classid+30000"/>
+      </xsl:attribute>
+      <xsl:attribute name="general">
+          <xsl:value-of select="base"/>
+      </xsl:attribute>
+    </generalization>
 
     <xsl:for-each select="/doc/all_attributes/attribute[class_id=$classid]">
 
-<xsl:text>  </xsl:text>
-    
+<xsl:text>
+  </xsl:text>
+
     <ownedAttribute xmi:type="uml:Property">
       <xsl:attribute name="xmi:id">
           <xsl:value-of select="id"/>
@@ -69,10 +80,6 @@
           <xsl:value-of select="type_id"/>
       </xsl:attribute>
     </ownedAttribute>
-    
-<xsl:text>
-</xsl:text>
-
   </xsl:for-each>
     
   </packagedElement> 
