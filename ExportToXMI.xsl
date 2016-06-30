@@ -52,17 +52,19 @@
     <xsl:attribute name="name">
         <xsl:value-of select="name"/>
     </xsl:attribute>
-    
+
+    <xsl:if test="base!=''">
 <xsl:text>
   </xsl:text>
-    <generalization xmi:type="uml:Generalization">
-      <xsl:attribute name="xmi:id">
-          <xsl:value-of select="$classid+30000"/>
-      </xsl:attribute>
-      <xsl:attribute name="general">
-          <xsl:value-of select="base"/>
-      </xsl:attribute>
-    </generalization>
+      <generalization xmi:type="uml:Generalization">
+        <xsl:attribute name="xmi:id">
+            <xsl:value-of select="$classid+30000"/>
+        </xsl:attribute>
+        <xsl:attribute name="general">
+            <xsl:value-of select="base"/>
+        </xsl:attribute>
+      </generalization>
+    </xsl:if>    
 
     <xsl:for-each select="/doc/all_attributes/attribute[class_id=$classid]">
 
