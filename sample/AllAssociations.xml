@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<all_associations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <association>
+       <name>Association1</name>
+       <id>1</id>
+       <left_role> someRole     </left_role>
+       <left_class_id> 125      </left_class_id>
+       <left_upper_value> 1    </left_upper_value>
+       <right_role> someRoleB   </right_role>
+       <right_class_id>   125   </right_class_id>
+       <right_upper_value> *   </right_upper_value>
+    </association>
+    <association>
+       <name>Association2</name>
+       <id>1</id>
+       <left_role> someRoleA    </left_role>
+       <left_class_id> 125      </left_class_id>
+       <left_upper_value> *    </left_upper_value>
+       <right_role> someRoleB   </right_role>
+       <right_class_id>   125   </right_class_id>
+       <right_upper_value> 1   </right_upper_value>
+    </association>
+</all_associations>
