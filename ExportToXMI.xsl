@@ -55,6 +55,8 @@
     </xsl:attribute>
 
     <xsl:for-each select="/doc/all_attributes/attribute[class_id=$classid]">
+
+<xsl:text>  </xsl:text>
     
     <ownedAttribute xmi:type="uml:Property">
       <xsl:attribute name="xmi:id">
@@ -68,12 +70,12 @@
       </xsl:attribute>
     </ownedAttribute>
     
+<xsl:text>
+</xsl:text>
+
   </xsl:for-each>
     
   </packagedElement> 
-
-<xsl:text>
-</xsl:text>
 
 </xsl:for-each>
 
