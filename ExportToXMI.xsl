@@ -45,13 +45,32 @@
 <xsl:for-each select="doc/all_classes/class">
 
   <packagedElement xmi:type="uml:Class"> 
+    <xsl:variable name="classid" select="id"/>
+
     <xsl:attribute name="xmi:id">
-        <xsl:value-of select="id"/>
+        <xsl:value-of select="$classid"/>
     </xsl:attribute>
     <xsl:attribute name="name">
         <xsl:value-of select="name"/>
     </xsl:attribute>
-    </packagedElement> 
+
+    <xsl:for-each select="/doc/all_attributes/attribute[class_id=$classid]">
+    
+    <ownedAttribute xmi:type="uml:Property">
+      <xsl:attribute name="xmi:id">
+          <xsl:value-of select="id"/>
+      </xsl:attribute>
+      <xsl:attribute name="name">
+          <xsl:value-of select="name"/>
+      </xsl:attribute>
+      <xsl:attribute name="type">
+          <xsl:value-of select="type_id"/>
+      </xsl:attribute>
+    </ownedAttribute>
+    
+  </xsl:for-each>
+    
+  </packagedElement> 
 
 <xsl:text>
 </xsl:text>
