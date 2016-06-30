@@ -15,10 +15,34 @@
     xmi:id="_Jb-_wDlMEeaBUKK2wCs8Hg" 
     name="RootElement">
 
-<xsl:for-each select="doc/all_classes/class">
-
 <xsl:text>
 </xsl:text>
+  <packagedElement xmi:type="uml:DataType" xmi:id="20001" name="QNumber"/>
+<xsl:text>
+</xsl:text>
+  <packagedElement xmi:type="uml:DataType" xmi:id="20002" name="QReal"/>
+<xsl:text>
+</xsl:text>
+  <packagedElement xmi:type="uml:DataType" xmi:id="20003" name="QDate"/>
+<xsl:text>
+</xsl:text>
+  <packagedElement xmi:type="uml:DataType" xmi:id="20004" name="QDateTime"/>
+<xsl:text>
+</xsl:text>
+  <packagedElement xmi:type="uml:DataType" xmi:id="20005" name="QDuration"/>
+<xsl:text>
+</xsl:text>
+  <packagedElement xmi:type="uml:DataType" xmi:id="20006" name="QBoolean"/>
+<xsl:text>
+</xsl:text>
+  <packagedElement xmi:type="uml:DataType" xmi:id="20007" name="QString"/>
+<xsl:text>
+</xsl:text>
+  <packagedElement xmi:type="uml:DataType" xmi:id="20008" name="QKey"/>
+<xsl:text>
+</xsl:text>
+
+<xsl:for-each select="doc/all_classes/class">
 
   <packagedElement xmi:type="uml:Class"> 
     <xsl:attribute name="xmi:id">
@@ -28,6 +52,9 @@
         <xsl:value-of select="name"/>
     </xsl:attribute>
     </packagedElement> 
+
+<xsl:text>
+</xsl:text>
 
 </xsl:for-each>
 

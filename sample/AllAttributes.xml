@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<all_attributes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<attribute>
+		<name>VersionNr</name>
+		<id>1</id>
+		<class_id>211</class_id>
+		<type_id>210</type_id>
+		<derived>true</derived>
+	</attribute>
+	<attribute>
+		<name>VersionName</name>
+		<id>2</id>
+		<class_id>211</class_id>
+		<type_id>210</type_id>
+		<derived>false</derived>
+	</attribute>
+</all_attributes>
