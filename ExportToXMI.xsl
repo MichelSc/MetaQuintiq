@@ -39,6 +39,8 @@
 <xsl:text>
 </xsl:text>
   <packagedElement xmi:type="uml:DataType" xmi:id="20008" name="QKey"/>
+<xsl:text>
+</xsl:text>
 
 <xsl:for-each select="doc/all_classes/class">
 
@@ -85,6 +87,63 @@
   </xsl:for-each>
     
   </packagedElement> 
+
+</xsl:for-each>
+
+<xsl:text>
+</xsl:text>
+
+<xsl:for-each select="doc/all_associations/association">
+<xsl:text>
+</xsl:text>
+  <packagedElement xmi:type="uml:Association">
+    <xsl:attribute name="xmi:id">
+      <xsl:value-of select="id"/>
+    </xsl:attribute>
+    <xsl:attribute name="name">
+      <xsl:value-of select="name"/>
+    </xsl:attribute>
+    <xsl:attribute name="memberEnd">
+      <xsl:value-of select="id+1"/> 
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="id+2"/>
+    </xsl:attribute>
+
+<xsl:text>
+  </xsl:text>
+    <ownedEnd xmi:type="uml:Property">
+      <xsl:attribute name="xmi:id">
+        <xsl:value-of select="id+1"/>
+      </xsl:attribute>
+      <xsl:attribute name="name">
+        <xsl:value-of select="left_role"/>
+      </xsl:attribute>
+      <xsl:attribute name="type">
+        <xsl:value-of select="left_class_id"/>
+      </xsl:attribute>
+      <xsl:attribute name="association">
+        <xsl:value-of select="id"/>
+      </xsl:attribute>
+    </ownedEnd>
+
+<xsl:text>
+  </xsl:text>
+    <ownedEnd xmi:type="uml:Property">
+      <xsl:attribute name="xmi:id">
+        <xsl:value-of select="id+2"/>
+      </xsl:attribute>
+      <xsl:attribute name="name">
+        <xsl:value-of select="right_role"/>
+      </xsl:attribute>
+      <xsl:attribute name="type">
+        <xsl:value-of select="right_class_id"/>
+      </xsl:attribute>
+      <xsl:attribute name="association">
+        <xsl:value-of select="id"/>
+      </xsl:attribute>
+    </ownedEnd>
+
+  </packagedElement>
 
 </xsl:for-each>
 

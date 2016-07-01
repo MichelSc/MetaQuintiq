@@ -2,4 +2,5 @@
 <doc xmlns:xi="http://www.w3.org/2001/XInclude">
     <xi:include href="AllClasses.xml"/>;
     <xi:include href="AllAttributes.xml"/>;
+    <xi:include href="AllAssociations.xml"/>;
 </doc>
