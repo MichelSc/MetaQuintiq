@@ -2,8 +2,7 @@
 
 <xsl:stylesheet version="1.0" 
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:log="log"
-    						xmlns:fn="http://www.w3.org/2005/xpath-functions">
+                xmlns:fn="http://www.w3.org/2005/xpath-functions">
 
 <xsl:template match="/">
 
@@ -49,6 +48,7 @@
 </xsl:text>
   <packagedElement xmi:type="uml:Class"> 
     <xsl:variable name="classid" select="id"/>
+    
     <xsl:attribute name="xmi:id">
         <xsl:value-of select="$classid"/>
     </xsl:attribute>
