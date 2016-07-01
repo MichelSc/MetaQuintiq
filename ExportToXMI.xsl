@@ -15,6 +15,7 @@
     xmi:id="_Jb-_wDlMEeaBUKK2wCs8Hg" 
     name="RootElement">
 
+    
 <xsl:text>
 </xsl:text>
   <packagedElement xmi:type="uml:DataType" xmi:id="20001" name="QNumber"/>
@@ -94,26 +95,31 @@
 </xsl:text>
 
 <xsl:for-each select="doc/all_associations/association">
+
+<xsl:variable name="association_id">
+  <xsl:number value="position()*10+40000" />
+</xsl:variable>
+
 <xsl:text>
 </xsl:text>
   <packagedElement xmi:type="uml:Association">
     <xsl:attribute name="xmi:id">
-      <xsl:value-of select="id"/>
+      <xsl:value-of select="$association_id"/>
     </xsl:attribute>
     <xsl:attribute name="name">
       <xsl:value-of select="name"/>
     </xsl:attribute>
     <xsl:attribute name="memberEnd">
-      <xsl:value-of select="id+1"/> 
+      <xsl:value-of select="$association_id+1"/> 
       <xsl:text> </xsl:text>
-      <xsl:value-of select="id+2"/>
+      <xsl:value-of select="$association_id+2"/>
     </xsl:attribute>
 
 <xsl:text>
   </xsl:text>
     <ownedEnd xmi:type="uml:Property">
       <xsl:attribute name="xmi:id">
-        <xsl:value-of select="id+1"/>
+        <xsl:value-of select="$association_id+1"/>
       </xsl:attribute>
       <xsl:attribute name="name">
         <xsl:value-of select="left_role"/>
@@ -122,7 +128,7 @@
         <xsl:value-of select="left_class_id"/>
       </xsl:attribute>
       <xsl:attribute name="association">
-        <xsl:value-of select="id"/>
+        <xsl:value-of select="$association_id"/>
       </xsl:attribute>
     </ownedEnd>
 
@@ -130,7 +136,7 @@
   </xsl:text>
     <ownedEnd xmi:type="uml:Property">
       <xsl:attribute name="xmi:id">
-        <xsl:value-of select="id+2"/>
+        <xsl:value-of select="$association_id+2"/>
       </xsl:attribute>
       <xsl:attribute name="name">
         <xsl:value-of select="right_role"/>
@@ -139,7 +145,7 @@
         <xsl:value-of select="right_class_id"/>
       </xsl:attribute>
       <xsl:attribute name="association">
-        <xsl:value-of select="id"/>
+        <xsl:value-of select="$association_id"/>
       </xsl:attribute>
     </ownedEnd>
 
