@@ -6,6 +6,7 @@
 
 <xsl:template match="/">
 
+<!-- the model -->
 <uml:Model 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xmi="http://www.omg.org/spec/XMI/20131001" 
@@ -14,6 +15,7 @@
     xmi:id="_Jb-_wDlMEeaBUKK2wCs8Hg" 
     name="RootElement">
 
+<!-- data types -->
 <xsl:text>
 </xsl:text>
   <packagedElement xmi:type="uml:DataType" xmi:id="20001" name="QNumber"/>
@@ -43,6 +45,7 @@
 
 <xsl:for-each select="doc/all_classes/class">
 
+<!-- a Class -->
 <xsl:text>
 </xsl:text>
   <packagedElement xmi:type="uml:Class"> 
@@ -66,6 +69,7 @@
       </generalization>
     </xsl:if>    
 
+<!-- Class attributes -->
     <xsl:for-each select="/doc/all_attributes/attribute[class_id=$classid]">
 <xsl:text>
   </xsl:text>
@@ -88,6 +92,7 @@
       </ownedAttribute>
     </xsl:for-each>
     
+<!-- Class references (from right to left) -->
     <xsl:for-each select="/doc/all_associations/association[right_class_id=$classid]">
       <xsl:variable name="association_id">
         <xsl:number value="position()*10+40000" />
@@ -127,6 +132,7 @@
       </ownedAttribute>
     </xsl:for-each>
 
+<!-- Class references (from left to right) -->
     <xsl:for-each select="/doc/all_associations/association[left_class_id=$classid]">
       <xsl:variable name="association_id">
         <xsl:number value="position()*10+40000" />
@@ -173,6 +179,7 @@
 <xsl:text>
 </xsl:text>
 
+<!-- The Associations -->
 <xsl:for-each select="doc/all_associations/association">
 
 <xsl:variable name="association_id">
