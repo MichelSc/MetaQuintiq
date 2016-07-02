@@ -48,14 +48,12 @@
 </xsl:text>
   <packagedElement xmi:type="uml:Class"> 
     <xsl:variable name="classid" select="id"/>
-    
     <xsl:attribute name="xmi:id">
         <xsl:value-of select="$classid"/>
     </xsl:attribute>
     <xsl:attribute name="name">
         <xsl:value-of select="name"/>
     </xsl:attribute>
-
     <xsl:if test="base!=''">
 <xsl:text>
   </xsl:text>
@@ -70,29 +68,105 @@
     </xsl:if>    
 
     <xsl:for-each select="/doc/all_attributes/attribute[class_id=$classid]">
-
 <xsl:text>
   </xsl:text>
-
-    <ownedAttribute xmi:type="uml:Property">
-      <xsl:attribute name="xmi:id">
-          <xsl:value-of select="id"/>
-      </xsl:attribute>
-      <xsl:attribute name="name">
-          <xsl:value-of select="name"/>
-      </xsl:attribute>
-      <xsl:attribute name="type">
-          <xsl:value-of select="type_id"/>
-      </xsl:attribute>
-      <xsl:attribute name="isDerived">
-        <xsl:value-of select="derived"/>
-      </xsl:attribute>
-      <xsl:attribute name="isReadOnly">
-        <xsl:text>false</xsl:text>
-      </xsl:attribute>
-    </ownedAttribute>
-  </xsl:for-each>
+      <ownedAttribute xmi:type="uml:Property">
+        <xsl:attribute name="xmi:id">
+            <xsl:value-of select="id"/>
+        </xsl:attribute>
+        <xsl:attribute name="name">
+            <xsl:value-of select="name"/>
+        </xsl:attribute>
+        <xsl:attribute name="type">
+            <xsl:value-of select="type_id"/>
+        </xsl:attribute>
+        <xsl:attribute name="isDerived">
+          <xsl:value-of select="derived"/>
+        </xsl:attribute>
+        <xsl:attribute name="isReadOnly">
+          <xsl:text>false</xsl:text>
+        </xsl:attribute>
+      </ownedAttribute>
+    </xsl:for-each>
     
+    <xsl:for-each select="/doc/all_associations/association[right_class_id=$classid]">
+      <xsl:variable name="association_id">
+        <xsl:number value="position()*10+40000" />
+      </xsl:variable>
+<xsl:text>
+  </xsl:text>
+      <ownedAttribute xmi:type="uml:Property">
+        <xsl:attribute name="xmi:id">
+          <xsl:value-of select="$association_id+2"/>
+        </xsl:attribute>
+        <xsl:attribute name="name">
+          <xsl:value-of select="left_role"/>
+        </xsl:attribute>
+        <xsl:attribute name="type">
+          <xsl:value-of select="left_class_id"/>
+        </xsl:attribute>
+        <xsl:attribute name="association">
+          <xsl:value-of select="$association_id"/>
+        </xsl:attribute>
+<xsl:text>
+    </xsl:text>
+        <lowerValue xmi:type="uml:LiteralInteger">
+          <xsl:attribute name="xmi:id">
+            <xsl:value-of select="$association_id+4"/>
+          </xsl:attribute>
+        </lowerValue>
+<xsl:text>
+    </xsl:text>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural">
+          <xsl:attribute name="xmi:id">
+            <xsl:value-of select="$association_id+6"/>
+          </xsl:attribute>
+          <xsl:attribute name="value">
+            <xsl:value-of select="left_upper_value"/>
+          </xsl:attribute>
+        </upperValue>
+      </ownedAttribute>
+    </xsl:for-each>
+
+    <xsl:for-each select="/doc/all_associations/association[left_class_id=$classid]">
+      <xsl:variable name="association_id">
+        <xsl:number value="position()*10+40000" />
+      </xsl:variable>
+<xsl:text>
+  </xsl:text>
+      <ownedAttribute xmi:type="uml:Property">
+        <xsl:attribute name="xmi:id">
+          <xsl:value-of select="$association_id+1"/>
+        </xsl:attribute>
+        <xsl:attribute name="name">
+          <xsl:value-of select="right_role"/>
+        </xsl:attribute>
+        <xsl:attribute name="type">
+          <xsl:value-of select="right_class_id"/>
+        </xsl:attribute>
+        <xsl:attribute name="association">
+          <xsl:value-of select="$association_id"/>
+        </xsl:attribute>
+<xsl:text>
+    </xsl:text>
+        <lowerValue xmi:type="uml:LiteralInteger">
+          <xsl:attribute name="xmi:id">
+            <xsl:value-of select="$association_id+3"/>
+          </xsl:attribute>
+        </lowerValue>
+<xsl:text>
+    </xsl:text>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural">
+          <xsl:attribute name="xmi:id">
+            <xsl:value-of select="$association_id+5"/>
+          </xsl:attribute>
+          <xsl:attribute name="value">
+            <xsl:value-of select="right_upper_value"/>
+          </xsl:attribute>
+        </upperValue>
+      </ownedAttribute>
+    </xsl:for-each>
+
   </packagedElement> 
 
 </xsl:for-each>
@@ -120,40 +194,6 @@
       <xsl:text> </xsl:text>
       <xsl:value-of select="$association_id+2"/>
     </xsl:attribute>
-
-<xsl:text>
-  </xsl:text>
-    <ownedEnd xmi:type="uml:Property">
-      <xsl:attribute name="xmi:id">
-        <xsl:value-of select="$association_id+1"/>
-      </xsl:attribute>
-      <xsl:attribute name="name">
-        <xsl:value-of select="left_role"/>
-      </xsl:attribute>
-      <xsl:attribute name="type">
-        <xsl:value-of select="left_class_id"/>
-      </xsl:attribute>
-      <xsl:attribute name="association">
-        <xsl:value-of select="$association_id"/>
-      </xsl:attribute>
-    </ownedEnd>
-
-<xsl:text>
-  </xsl:text>
-    <ownedEnd xmi:type="uml:Property">
-      <xsl:attribute name="xmi:id">
-        <xsl:value-of select="$association_id+2"/>
-      </xsl:attribute>
-      <xsl:attribute name="name">
-        <xsl:value-of select="right_role"/>
-      </xsl:attribute>
-      <xsl:attribute name="type">
-        <xsl:value-of select="right_class_id"/>
-      </xsl:attribute>
-      <xsl:attribute name="association">
-        <xsl:value-of select="$association_id"/>
-      </xsl:attribute>
-    </ownedEnd>
 
   </packagedElement>
 
