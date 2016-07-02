@@ -84,6 +84,12 @@
       <xsl:attribute name="type">
           <xsl:value-of select="type_id"/>
       </xsl:attribute>
+      <xsl:attribute name="isDerived">
+        <xsl:value-of select="derived"/>
+      </xsl:attribute>
+      <xsl:attribute name="isReadOnly">
+        <xsl:text>false</xsl:text>
+      </xsl:attribute>
     </ownedAttribute>
   </xsl:for-each>
     
