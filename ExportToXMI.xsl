@@ -14,7 +14,6 @@
     xmi:id="_Jb-_wDlMEeaBUKK2wCs8Hg" 
     name="RootElement">
 
-    
 <xsl:text>
 </xsl:text>
   <packagedElement xmi:type="uml:DataType" xmi:id="20001" name="QNumber"/>
