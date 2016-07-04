@@ -1,0 +1,3 @@
+go in every *_E sheets
+select  'Developer' in the ribbon
+in the xml area, select 'Export'

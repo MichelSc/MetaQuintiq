@@ -1,11 +1,15 @@
-// to export addsoctions from Quintiq
-// run this piece fo code
-// copy the log output in the server output form
-// past it in excel
+// export the elements from Quintiq into the sheets classes_I, attributes_I and associations_I
+// for the classes, open an editor, and export from left upper pane
+//    make sure the classes are sorted by name (otherwise, looking up will be wrong)
+// for the attributes, open the from Overview/Attributes
+// for the associations
+//   run this piece fo code
+//   copy the log output in the server output form
+//    past it in excel, sheet Classes_I
 domain := DomainModel::Domain();
 traverse(domain.ModeledRelations(), Elements, association)
   {
-  left := association.LeftSide();
+  left  := association.LeftSide();
   right := association.RightSide();
   strings := construct(Strings);
   strings.Add(association.Name());
