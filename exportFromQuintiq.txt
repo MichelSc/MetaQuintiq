@@ -1,0 +1,30 @@
+// to export addsoctions from Quintiq
+// run this piece fo code
+// copy the log output in the server output form
+// past it in excel
+domain := DomainModel::Domain();
+traverse(domain.ModeledRelations(), Elements, association)
+  {
+  left := association.LeftSide();
+  right := association.RightSide();
+  strings := construct(Strings);
+  strings.Add(association.Name());
+  strings.Add(left.Name());
+  strings.Add(left.ObjectDefinition().Name());
+  strings.Add(left.Cardinality());
+  strings.Add(right.Name());
+  strings.Add(right.ObjectDefinition().Name());
+  strings.Add(right.Cardinality());
+  string := strings.Concatenate(";");
+  if ( tolog )
+    {
+    info('..association', association.Name());  
+    info('....left', left.Name(), left.Cardinality(), left.ObjectDefinition().Name());       
+    info('....right', right.Name(), right.Cardinality(), right.ObjectDefinition().Name());       
+    }
+  else
+    {
+    info(string);
+    }
+  }
+

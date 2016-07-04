@@ -95,7 +95,7 @@
 <!-- Class references (from right to left) -->
     <xsl:for-each select="/doc/all_associations/association[right_class_id=$classid]">
       <xsl:variable name="association_id">
-        <xsl:number value="position()*10+40000" />
+        <xsl:number value="id" />
       </xsl:variable>
 <xsl:text>
   </xsl:text>
@@ -135,7 +135,7 @@
 <!-- Class references (from left to right) -->
     <xsl:for-each select="/doc/all_associations/association[left_class_id=$classid]">
       <xsl:variable name="association_id">
-        <xsl:number value="position()*10+40000" />
+        <xsl:number value="id" />
       </xsl:variable>
 <xsl:text>
   </xsl:text>
@@ -183,7 +183,7 @@
 <xsl:for-each select="doc/all_associations/association">
 
 <xsl:variable name="association_id">
-  <xsl:number value="position()*10+40000" />
+  <xsl:number value="id" />
 </xsl:variable>
 
 <xsl:text>
