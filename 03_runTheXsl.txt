@@ -1,0 +1,2 @@
+Run ExportToXMI.xsl with your favorite xsl engine.
+See for instance DoXsl.bat for Saxon.

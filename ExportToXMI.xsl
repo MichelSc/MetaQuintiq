@@ -43,9 +43,9 @@
 <xsl:text>
 </xsl:text>
 
+<!-- The Classes -->
 <xsl:for-each select="doc/all_classes/class">
 
-<!-- a Class -->
 <xsl:text>
 </xsl:text>
   <packagedElement xmi:type="uml:Class"> 
