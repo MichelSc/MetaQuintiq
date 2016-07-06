@@ -1,4 +1,5 @@
-// export the elements from Quintiq into the sheets classes_I, attributes_I and associations_I
+// export the elements from Quintiq into the sheets classes_I, attributes_I 
+//    and associations_I of AllElements.xlsx 
 // for the classes, open a Q editor, and export from left upper pane
 //    make sure the classes are sorted by name (otherwise, looking up will go badly)
 // for the attributes, open the form Overview/Attributes
@@ -6,7 +7,7 @@
 // for the associations
 //   run the piece of code here below
 //   copy the log output in the server output form
-//    past it in excel, sheet Classes_I
+//    paste it in excel, sheet Associtations_I
 domain := DomainModel::Domain();
 traverse(domain.ModeledRelations(), Elements, association)
   {
